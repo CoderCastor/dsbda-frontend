@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { motion } from "motion/react";
 import { RxGithubLogo } from "react-icons/rx";
 import googleCollabLogo from "../assets/favicon.ico";
