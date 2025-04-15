@@ -7,6 +7,7 @@ import { TypewriterEffect } from "./ui/typewriter-effect";
 import axios from "axios";
 import { RxCross2 } from "react-icons/rx";
 
+
 function MainSection() {
     const [isAnalyzing, setIsAnalyzing] = useState<boolean>(false);
     const [input, setInput] = useState<string>("");
@@ -102,6 +103,7 @@ function MainSection() {
             }}
             className={` border-purple-900 border-[1px] ${shadow} md:p-10 p-8 rounded-lg`}
         >
+            
             <h3 className="text-zinc-100 text-xl sm:text-[25px] md: mb-2">
                 <span className="text-red-300 ">Spam</span> Mail Detection
                 System
