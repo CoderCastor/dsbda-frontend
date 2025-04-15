@@ -12,13 +12,49 @@ function MainSection() {
     const [input, setInput] = useState<string>("");
     const [spamEmail, setSpamEmail] = useState<number>(0);
 
-    console.log(input);
+    const emailSamples = [
+        {
+          message: "Congratulations! You've won an all-expense-paid luxury cruise to the Bahamas. This exclusive offer is valid for a limited time only. To claim your tickets, please click the link below and complete the short registration process. Don't miss out on this once-in-a-lifetime opportunity to enjoy sun, sand, and sea absolutely free!",
+          type: "Spam"
+        },
+        {
+          message: "Hi John, I hope you're doing well. I was wondering if we could reschedule our meeting to 4 PM instead of 3 PM. I have another call that may run a bit longer than expected. Let me know if that works for you. Looking forward to our discussion about the Q2 roadmap. Thanks!",
+          type: "Ham"
+        },
+        {
+          message: "This is your last chance to take advantage of our massive clearance sale! Buy one item and get another completely free. From electronics to clothing, everything must go. Act now before our inventory runs out. Click the link and save big on your next shopping spree!",
+          type: "Spam"
+        },
+        {
+          message: "Dear Team, Please find attached the quarterly financial report for Q1 2025. The document includes detailed analysis, key performance indicators, and budget adjustments for the upcoming months. If you have any questions or require clarification, feel free to reach out by end of this week.",
+          type: "Ham"
+        },
+        {
+          message: "Attention! We've detected unusual activity on your bank account that may indicate unauthorized access. Please verify your account immediately by logging into the secure portal linked below. Failure to act within 24 hours may result in temporary suspension of your services for security reasons.",
+          type: "Spam"
+        },
+        {
+          message: "Hey Sarah, Just checking in to see if you'd be free to catch up over coffee this weekend. It’s been a while since we last met and I’d love to hear how everything’s going with your new job. Let me know what day works best for you and we’ll plan something!",
+          type: "Ham"
+        },
+        {
+          message: "You have been selected to participate in an exclusive market research study. By completing a quick survey, you stand a chance to win a $1000 Amazon gift card. This offer is only open to the first 100 participants. Click the link below to get started and secure your reward!",
+          type: "Spam"
+        },
+        {
+          message: "Hi All, As discussed in today’s meeting, I've compiled and attached the minutes along with key action items for each team. Please review and update your progress by Friday so we can address any blockers in the next sync. Thanks for your active participation!",
+          type: "Ham"
+        }
+      ];
+
+      const getRandomMail = () => {
+        const randomIndex = Math.floor(Math.random() * emailSamples.length);
+        setInput(emailSamples[randomIndex].message);
+      };
 
     const demoClickHandler = () => {
         if (!isAnalyzing) {
-            setInput(
-                "Congratulations! You have won a $1000 Walmart gift card. Click here to claim now!"
-            );
+            getRandomMail();
         }
     };
 
